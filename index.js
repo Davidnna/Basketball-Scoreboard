@@ -9,7 +9,7 @@ function updateLeader() {
     } else if (score1 > score2) {
         document.getElementById("leader").textContent = "Home is winning";
     } else {
-        document.getElementById("leader").textContent = "";
+        document.getElementById("leader").textContent = "It is a Draw";
     }
 }
 
