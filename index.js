@@ -54,7 +54,7 @@ function reset() {
     score2 = 0;
     homeScore.textContent = score1;
     awayScore.textContent = score2;
-    updateLeader();
+    document.getElementById("leader").textContent = "Start the game";
 }
 
 function startTimer() {
