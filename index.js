@@ -2,6 +2,9 @@ let homeScore = document.getElementById("home-score");
 let awayScore = document.getElementById("away-score");
 let score1 = parseInt(homeScore.textContent);
 let score2 = parseInt(awayScore.textContent);
+let start = false;
+let time = 300;
+let interval;
 
 function updateLeader() {
     if (score1 < score2) {
@@ -14,39 +17,65 @@ function updateLeader() {
 }
 
 function add1() {
-    score1 += 1;
-    homeScore.textContent = score1;
-    updateLeader();
+    if (start) {
+        score1 += 1;
+        homeScore.textContent = score1;
+        updateLeader();
+    }
 }
 
 function add2() {
-    score1 += 2;
-    homeScore.textContent = score1;
-    updateLeader();
+    if (start) {
+        score1 += 2;
+        homeScore.textContent = score1;
+        updateLeader();
+    }
 }
 
 function add3() {
-    score1 += 3;
-    homeScore.textContent = score1;
-    updateLeader();
+    if (start) {
+        score1 += 3;
+        homeScore.textContent = score1;
+        updateLeader();
+    }
 }
 
 function adds1() {
-    score2 += 1;
-    awayScore.textContent = score2;
-    updateLeader();
+    if (start) {
+        score2 += 1;
+        awayScore.textContent = score2;
+        updateLeader();
+    }
 }
 
 function adds2() {
-    score2 += 2;
-    awayScore.textContent = score2;
-    updateLeader();
+    if (start) {
+        score2 += 2;
+        awayScore.textContent = score2;
+        updateLeader();
+    }
 }
 
 function adds3() {
-    score2 += 3;
-    awayScore.textContent = score2;
-    updateLeader();
+    if (start) {
+        score2 += 3;
+        awayScore.textContent = score2;
+        updateLeader();
+    }
+}
+
+function pause() {
+    if (start) {
+        clearInterval(interval);
+        start = false;
+    }
+}
+
+function resume() {
+    if (time < 300 && start != true) {
+        start = true;
+        timer();
+    }
 }
 
 function reset() {
@@ -55,12 +84,21 @@ function reset() {
     homeScore.textContent = score1;
     awayScore.textContent = score2;
     document.getElementById("leader").textContent = "Start the game";
+    document.getElementById("startTimer").disabled = false;
+    document.getElementById("timer").textContent = "05:00";
+    pause();
 }
 
 function startTimer() {
+    timer();
+    document.getElementById("leader").textContent = "The game has Started";
+    document.getElementById("startTimer").disabled = true;
+    start = true;
+}
+
+function timer() {
     let timer = document.getElementById("timer");
-    let time = 300;
-    let interval = setInterval(function() {
+    interval = setInterval(function() {
         let minutes = Math.floor(time / 60);
         let seconds = time % 60;
         minutes = minutes < 10 ? '0' + minutes : minutes;
@@ -69,8 +107,15 @@ function startTimer() {
         if (time <= 0) {
             clearInterval(interval);
             alert('Time is up!');
+            start = false;
+            if (score1 < score2) {
+                document.getElementById("leader").textContent = "Time Up!, the away team won";
+            } else if (score1 > score2) {
+                document.getElementById("leader").textContent = "Time Up!, the home team won";
+            } else {
+                document.getElementById("leader").textContent = "Time Up!, the game ended at a draw";
+            }
         }
         time--;
     }, 1000);
-    document.getElementById("startTimer").disabled = true
 }
