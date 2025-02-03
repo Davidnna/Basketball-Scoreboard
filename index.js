@@ -16,49 +16,17 @@ function updateLeader() {
     }
 }
 
-function add1() {
+function add(num) {
     if (start) {
-        score1 += 1;
+        score1 += num;
         homeScore.textContent = score1;
         updateLeader();
     }
 }
 
-function add2() {
+function adds(num) {
     if (start) {
-        score1 += 2;
-        homeScore.textContent = score1;
-        updateLeader();
-    }
-}
-
-function add3() {
-    if (start) {
-        score1 += 3;
-        homeScore.textContent = score1;
-        updateLeader();
-    }
-}
-
-function adds1() {
-    if (start) {
-        score2 += 1;
-        awayScore.textContent = score2;
-        updateLeader();
-    }
-}
-
-function adds2() {
-    if (start) {
-        score2 += 2;
-        awayScore.textContent = score2;
-        updateLeader();
-    }
-}
-
-function adds3() {
-    if (start) {
-        score2 += 3;
+        score2 += num;
         awayScore.textContent = score2;
         updateLeader();
     }

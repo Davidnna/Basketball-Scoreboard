@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Basketball Scoreboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="image/favicon.ico">
-        <link rel="stylesheet" href="index.css">
-        <script src="index.js" defer></script>
+        <link rel="stylesheet" href="styles.css">
+        <title>Basketball Scoreboard</title>
     </head>
     <body>
         <h1 class="title">BASKETBALL SCOREBOARD</h1>
@@ -15,16 +16,16 @@
                 <div class="teams">
                     <h3 class="h3">HOME</h3>
                     <h1 class="h1" id="home-score">0</h1>
-                    <button class="buttons" onclick="add1()">+1</button>
-                    <button class="buttons" onclick="add2()">+2</button>
-                    <button class="buttons" onclick="add3()">+3</button>
+                    <button class="buttons" onclick="add(1)">+1</button>
+                    <button class="buttons" onclick="add(2)">+2</button>
+                    <button class="buttons" onclick="add(3)">+3</button>
                 </div>
                 <div class="teams">
                     <h3 class="h3">AWAY</h3>
                     <h1 class="h1" id="away-score">0</h1>
-                    <button class="buttons" onclick="adds1()">+1</button>
-                    <button class="buttons" onclick="adds2()">+2</button>
-                    <button class="buttons" onclick="adds3()">+3</button>
+                    <button class="buttons" onclick="adds(1)">+1</button>
+                    <button class="buttons" onclick="adds(2)">+2</button>
+                    <button class="buttons" onclick="adds(3)">+3</button>
                 </div>
             </div>
             <div>
@@ -34,5 +35,6 @@
             </div>
             <button class="buttons" id="startTimer" onclick="startTimer()">Start Game</button>
         </div>
+        <script src="index.js"></script>
     </body>
 </html>
