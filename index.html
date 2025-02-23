@@ -3,38 +3,56 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="image/favicon.ico">
-        <link rel="stylesheet" href="styles.css">
+        <!-- <link rel="icon" type="image/jpeg" href="images/favicon.ico"> -->
+        <link rel="icon" type="image/jpeg" href="images/basketball.jpeg">
+        <!-- <link rel="icon" type="image/jpeg" href="https://jmp.sh/s/8ULYfmI6bZJtMfawmSrL"> -->
+        <!-- <link rel="icon" type="image/jpeg" href="https://i.postimg.cc/d3m5kwsf/basketball.jpg"> -->
+        <link rel="stylesheet" href="styles/styles.css">
         <title>Basketball Scoreboard</title>
     </head>
     <body>
-        <h1 class="title">BASKETBALL SCOREBOARD</h1>
-        <div class="containers">
-            <h2 class="buttons" id="timer">05:00</h2>
-            <h3 id="leader">Start the game</h3>
+        <!-- Header -->
+        <header>    
+            <h1 class="title">BASKETBALL SCOREBOARD</h1>
+        </header>
+        <!-- Main -->
+        <main class="project">
+            <!-- Timer -->
+            <hgroup>
+                <h2 class="buttons" id="timer">05:00</h2>
+                <h3 id="leader">Start the game</h3>
+            </hgroup>
+            <!-- Board -->
             <div class="container">
+                <!-- Home -->
                 <div class="teams">
-                    <h3 class="h3">HOME</h3>
-                    <h1 class="h1" id="home-score">0</h1>
+                    <hgroup>
+                        <h3 class="team">HOME</h3>
+                        <h1 class="score" id="home-score">0</h1>
+                    </hgroup>
                     <button type="button" class="buttons" onclick="add(1)">+1</button>
                     <button type="button" class="buttons" onclick="add(2)">+2</button>
                     <button type="button" class="buttons" onclick="add(3)">+3</button>
                 </div>
+                <!-- Away -->
                 <div class="teams">
-                    <h3 class="h3">AWAY</h3>
-                    <h1 class="h1" id="away-score">0</h1>
+                    <hgroup>
+                        <h3 class="team">AWAY</h3>
+                        <h1 class="score" id="away-score">0</h1>
+                    </hgroup>
                     <button type="button" class="buttons" onclick="adds(1)">+1</button>
                     <button type="button" class="buttons" onclick="adds(2)">+2</button>
                     <button type="button" class="buttons" onclick="adds(3)">+3</button>
                 </div>
             </div>
-            <div>
+            <!-- Actions -->
+            <div class="button">
                 <button type="button" class="buttons" onclick="pause()">Pause</button>
                 <button type="button" class="buttons" onclick="reset()">Reset</button>
                 <button type="button" class="buttons" onclick="resume()">Resume</button>
             </div>
             <button type="button" class="buttons" id="startTimer" onclick="startTimer()">Start Game</button>
-        </div>
-        <script src="index.js"></script>
+        </main>
+        <script src="scripts/index.js"></script>
     </body>
 </html>

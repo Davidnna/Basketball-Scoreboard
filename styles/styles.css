@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0284C7;
+    text-align: center;
+}
+
+/* Header */
+header .title {
+    margin: 3% 0 2%;
+    color: #4B5563;
+}
+
+/* Main */
+.project {
+    background-color: #0C4A6E;
+    width: 40%;
+    margin: auto;
+    padding: 2%;
+}
+
+/* Timer */
+hgroup #timer {
+    margin: 0;
+}
+
+hgroup #leader {
+    color: #daa618;
+    letter-spacing: 0.1em;
+}
+
+/* Board */
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container .teams {
+    width: 40%;
+}
+
+.container .teams .team {
+    font-size: 5vw;
+    color: #D1FAE5;
+}
+
+.container .teams .score {
+    font-size: 15vw;
+    color: #881337;
+    background-color: #1F2937;
+}
+
+/* Actions */
+.buttons {
+    font-family: "Cursed Timer ULiL";
+    background: none;
+    cursor: pointer;
+    color: #7DD3FC;
+    border: #7DD3FC 1px solid;
+    padding: 0.5em;
+    margin: 5%;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    header .title {
+        font-size: x-large;
+    }
+
+    .project {
+        width: 80%;
+        padding: 5%;
+    }
+
+    .container .teams .team {
+        font-size: 9vw;
+    }
+
+    .container .teams .score {
+        font-size: 20vw;
+    }
+}
